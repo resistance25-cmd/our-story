@@ -1,0 +1,1799 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Our Story</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500&family=Lora:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --burgundy: #6B1F2A;
+    --burgundy-dark: #4A1019;
+    --burgundy-light: #8B3040;
+    --gold: #B8860B;
+    --gold-light: #D4A940;
+    --gold-pale: #F0D990;
+    --cream: #FAF6EF;
+    --cream-dark: #F0E8D8;
+    --ivory: #FFFDF7;
+    --rose: #C9748B;
+    --rose-light: #E8A8B8;
+    --forest: #3D5C3A;
+    --text-dark: #2C1A1A;
+    --text-mid: #5A3A3A;
+    --text-light: #8A6A6A;
+    --shadow: rgba(107,31,42,0.18);
+  }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    background-color: var(--cream);
+    background-image:
+      radial-gradient(ellipse at 20% 50%, rgba(200,116,139,0.06) 0%, transparent 60%),
+      radial-gradient(ellipse at 80% 20%, rgba(184,134,11,0.07) 0%, transparent 60%),
+      url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='80' height='80'%3E%3Cpath d='M40 10 Q50 0 60 10 Q70 20 60 30 Q50 40 40 30 Q30 40 20 30 Q10 20 20 10 Q30 0 40 10Z' fill='none' stroke='%23B8860B' stroke-width='0.3' opacity='0.15'/%3E%3C/svg%3E");
+    font-family: 'Lora', Georgia, serif;
+    color: var(--text-dark);
+    min-height: 100vh;
+  }
+
+  /* ── NAV ── */
+  nav {
+    background: linear-gradient(135deg, var(--burgundy-dark) 0%, var(--burgundy) 60%, var(--burgundy-light) 100%);
+    border-bottom: 3px solid var(--gold);
+    padding: 0;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    box-shadow: 0 4px 20px var(--shadow);
+  }
+  .nav-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 12px 24px;
+    gap: 12px;
+    flex-wrap: wrap;
+  }
+  .nav-brand {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.7rem;
+    font-weight: 600;
+    font-style: italic;
+    color: var(--gold-light);
+    letter-spacing: 0.04em;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    cursor: pointer;
+  }
+  .nav-brand span { font-size: 1.3rem; }
+  .nav-tabs {
+    display: flex;
+    gap: 4px;
+    flex-wrap: wrap;
+  }
+  .nav-tab {
+    background: none;
+    border: none;
+    color: rgba(255,255,255,0.75);
+    font-family: 'Lora', serif;
+    font-size: 0.82rem;
+    padding: 7px 14px;
+    cursor: pointer;
+    border-radius: 20px;
+    transition: all 0.2s;
+    letter-spacing: 0.03em;
+  }
+  .nav-tab:hover { background: rgba(255,255,255,0.1); color: var(--gold-pale); }
+  .nav-tab.active { background: var(--gold); color: var(--burgundy-dark); font-weight: 500; }
+  .nav-actions { display: flex; gap: 8px; }
+  .btn-icon {
+    background: rgba(255,255,255,0.12);
+    border: 1px solid rgba(255,255,255,0.2);
+    color: var(--gold-pale);
+    font-size: 0.75rem;
+    padding: 6px 12px;
+    border-radius: 16px;
+    cursor: pointer;
+    font-family: 'Lora', serif;
+    transition: all 0.2s;
+  }
+  .btn-icon:hover { background: rgba(255,255,255,0.2); }
+
+  /* ── MAIN ── */
+  main {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 32px 20px 80px;
+  }
+
+  /* ── PAGE HEADER ── */
+  .page-header {
+    text-align: center;
+    margin-bottom: 36px;
+    position: relative;
+  }
+  .page-header h1 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2.6rem;
+    font-weight: 600;
+    color: var(--burgundy);
+    line-height: 1.1;
+  }
+  .page-header .subtitle {
+    font-family: 'Lora', serif;
+    font-style: italic;
+    color: var(--text-light);
+    margin-top: 6px;
+    font-size: 0.95rem;
+  }
+  .ornament {
+    color: var(--gold);
+    font-size: 1.5rem;
+    margin: 8px 0;
+    display: block;
+    letter-spacing: 6px;
+  }
+  .divider {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin: 20px 0;
+    color: var(--gold);
+    font-size: 1rem;
+  }
+  .divider::before, .divider::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: linear-gradient(to right, transparent, var(--gold-light), transparent);
+  }
+
+  /* ── CARDS ── */
+  .card {
+    background: var(--ivory);
+    border: 1px solid var(--cream-dark);
+    border-radius: 4px;
+    box-shadow: 0 3px 18px var(--shadow), inset 0 0 0 1px rgba(184,134,11,0.08);
+    padding: 24px;
+    position: relative;
+    overflow: hidden;
+  }
+  .card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, var(--burgundy), var(--gold-light), var(--burgundy));
+  }
+  .card-corner {
+    position: absolute;
+    color: var(--gold);
+    opacity: 0.25;
+    font-size: 1.4rem;
+    line-height: 1;
+    pointer-events: none;
+  }
+  .card-corner.tl { top: 8px; left: 8px; }
+  .card-corner.tr { top: 8px; right: 8px; transform: scaleX(-1); }
+  .card-corner.bl { bottom: 8px; left: 8px; transform: scaleY(-1); }
+  .card-corner.br { bottom: 8px; right: 8px; transform: scale(-1); }
+
+  /* ── BUTTONS ── */
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 22px;
+    border-radius: 3px;
+    border: none;
+    cursor: pointer;
+    font-family: 'Lora', serif;
+    font-size: 0.88rem;
+    letter-spacing: 0.03em;
+    transition: all 0.2s;
+    text-decoration: none;
+  }
+  .btn-primary {
+    background: linear-gradient(135deg, var(--burgundy), var(--burgundy-light));
+    color: var(--gold-pale);
+    border: 1px solid var(--burgundy-dark);
+    box-shadow: 0 2px 10px rgba(107,31,42,0.3);
+  }
+  .btn-primary:hover { background: linear-gradient(135deg, var(--burgundy-dark), var(--burgundy)); transform: translateY(-1px); box-shadow: 0 4px 16px rgba(107,31,42,0.4); }
+  .btn-secondary {
+    background: var(--cream-dark);
+    color: var(--burgundy);
+    border: 1px solid var(--gold-light);
+  }
+  .btn-secondary:hover { background: var(--gold-pale); }
+  .btn-ghost { background: none; border: 1px solid var(--burgundy); color: var(--burgundy); }
+  .btn-ghost:hover { background: rgba(107,31,42,0.06); }
+  .btn-danger { background: linear-gradient(135deg, #7A2020, #A03030); color: #FAE8E8; border: 1px solid #5A1010; }
+
+  /* ── FORMS ── */
+  .form-group { margin-bottom: 18px; }
+  .form-group label { display: block; font-size: 0.82rem; color: var(--text-mid); margin-bottom: 6px; font-style: italic; }
+  .form-group input, .form-group textarea, .form-group select {
+    width: 100%;
+    padding: 10px 14px;
+    background: var(--cream);
+    border: 1px solid var(--cream-dark);
+    border-radius: 3px;
+    font-family: 'Lora', serif;
+    font-size: 0.92rem;
+    color: var(--text-dark);
+    outline: none;
+    transition: border-color 0.2s;
+  }
+  .form-group input:focus, .form-group textarea:focus, .form-group select:focus {
+    border-color: var(--gold-light);
+    box-shadow: 0 0 0 3px rgba(184,134,11,0.1);
+  }
+  .form-group textarea { resize: vertical; min-height: 90px; }
+
+  /* ── GRID ── */
+  .grid-2 { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+  .grid-3 { display: grid; grid-template-columns: repeat(3,1fr); gap: 16px; }
+  @media(max-width:700px) { .grid-2, .grid-3 { grid-template-columns: 1fr; } }
+
+  /* ── TAGS ── */
+  .tag {
+    display: inline-block;
+    padding: 3px 10px;
+    border-radius: 12px;
+    font-size: 0.75rem;
+    font-family: 'Lora', serif;
+  }
+  .tag-trip { background: rgba(61,92,58,0.12); color: var(--forest); border: 1px solid rgba(61,92,58,0.25); }
+  .tag-date { background: rgba(201,116,139,0.12); color: var(--rose); border: 1px solid rgba(201,116,139,0.3); }
+  .tag-milestone { background: rgba(184,134,11,0.12); color: var(--gold); border: 1px solid rgba(184,134,11,0.3); }
+  .tag-just { background: rgba(107,31,42,0.08); color: var(--burgundy); border: 1px solid rgba(107,31,42,0.2); }
+
+  /* ── SECTION PAGES ── */
+  .page { display: none; animation: fadeSlideIn 0.35s ease; }
+  .page.active { display: block; }
+  @keyframes fadeSlideIn {
+    from { opacity: 0; transform: translateY(14px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  /* ── DASHBOARD ── */
+  .dash-hero {
+    background: linear-gradient(135deg, var(--burgundy-dark) 0%, var(--burgundy) 50%, var(--burgundy-light) 100%);
+    border-radius: 6px;
+    padding: 40px 32px;
+    text-align: center;
+    color: var(--gold-pale);
+    margin-bottom: 28px;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 6px 32px var(--shadow);
+  }
+  .dash-hero::before {
+    content: '❧ ❦ ❧';
+    position: absolute;
+    top: 14px; left: 50%; transform: translateX(-50%);
+    color: var(--gold);
+    opacity: 0.35;
+    font-size: 1.1rem;
+    letter-spacing: 10px;
+  }
+  .dash-hero::after {
+    content: '❧ ❦ ❧';
+    position: absolute;
+    bottom: 14px; left: 50%; transform: translateX(-50%);
+    color: var(--gold);
+    opacity: 0.35;
+    font-size: 1.1rem;
+    letter-spacing: 10px;
+  }
+  .dash-days {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 5.5rem;
+    font-weight: 300;
+    line-height: 1;
+    color: var(--gold-light);
+    margin: 12px 0 4px;
+  }
+  .dash-days-label {
+    font-family: 'Lora', serif;
+    font-style: italic;
+    font-size: 1rem;
+    color: rgba(240,217,144,0.8);
+    letter-spacing: 0.1em;
+  }
+  .dash-couple {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.5rem;
+    font-style: italic;
+    margin-bottom: 8px;
+    color: var(--gold-pale);
+    letter-spacing: 0.05em;
+  }
+  .dash-since {
+    font-size: 0.82rem;
+    color: rgba(240,217,144,0.65);
+    margin-top: 6px;
+  }
+  .dash-grid { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 16px; margin-bottom: 20px; }
+  @media(max-width:700px) { .dash-grid { grid-template-columns: 1fr; } }
+  .dash-card {
+    background: var(--ivory);
+    border: 1px solid var(--cream-dark);
+    border-radius: 4px;
+    padding: 20px;
+    box-shadow: 0 2px 12px var(--shadow);
+    position: relative;
+    overflow: hidden;
+  }
+  .dash-card::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px; background: linear-gradient(90deg, var(--burgundy), var(--gold-light), var(--burgundy)); }
+  .dash-card h3 { font-family: 'Cormorant Garamond', serif; font-size: 1rem; color: var(--text-light); font-style: italic; margin-bottom: 8px; }
+  .dash-card .value { font-family: 'Cormorant Garamond', serif; font-size: 1.6rem; color: var(--burgundy); font-weight: 600; }
+  .dash-card .sub { font-size: 0.78rem; color: var(--text-light); margin-top: 4px; font-style: italic; }
+  .quote-block {
+    background: var(--ivory);
+    border-left: 4px solid var(--gold);
+    border-radius: 0 4px 4px 0;
+    padding: 18px 22px;
+    font-style: italic;
+    color: var(--text-mid);
+    font-size: 1rem;
+    margin-top: 16px;
+    box-shadow: 0 2px 10px var(--shadow);
+    position: relative;
+  }
+  .quote-block::before { content: '"'; font-family: 'Cormorant Garamond', serif; font-size: 5rem; color: var(--gold-pale); position: absolute; top: -12px; left: 12px; line-height: 1; pointer-events: none; }
+  .quote-block .attr { font-size: 0.78rem; color: var(--text-light); font-style: normal; margin-top: 8px; }
+
+  /* ── SETUP MODAL ── */
+  .modal-overlay {
+    position: fixed; inset: 0;
+    background: rgba(44,26,26,0.85);
+    z-index: 200;
+    display: flex; align-items: center; justify-content: center;
+    padding: 20px;
+  }
+  .modal {
+    background: var(--ivory);
+    border: 2px solid var(--gold);
+    border-radius: 6px;
+    padding: 36px 32px;
+    max-width: 480px;
+    width: 100%;
+    position: relative;
+    box-shadow: 0 20px 60px rgba(44,26,26,0.5);
+    animation: fadeSlideIn 0.3s ease;
+  }
+  .modal h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2rem;
+    color: var(--burgundy);
+    text-align: center;
+    margin-bottom: 6px;
+  }
+  .modal .close-btn {
+    position: absolute; top: 12px; right: 14px;
+    background: none; border: none; font-size: 1.2rem;
+    color: var(--text-light); cursor: pointer;
+  }
+
+  /* ── TIMELINE ── */
+  .filter-bar { display: flex; gap: 8px; margin-bottom: 22px; flex-wrap: wrap; align-items: center; }
+  .filter-btn { background: var(--cream-dark); border: 1px solid var(--cream-dark); color: var(--text-mid); padding: 6px 14px; border-radius: 20px; cursor: pointer; font-family: 'Lora', serif; font-size: 0.8rem; transition: all 0.2s; }
+  .filter-btn:hover { border-color: var(--gold-light); }
+  .filter-btn.active { background: var(--burgundy); color: var(--gold-pale); border-color: var(--burgundy-dark); }
+  .memory-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 20px; }
+  .memory-card {
+    background: var(--ivory);
+    border: 1px solid var(--cream-dark);
+    border-radius: 4px;
+    overflow: hidden;
+    box-shadow: 0 3px 16px var(--shadow);
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s;
+    animation: fadeSlideIn 0.35s ease;
+  }
+  .memory-card:hover { transform: translateY(-3px); box-shadow: 0 8px 28px var(--shadow); }
+  .memory-photo {
+    width: 100%;
+    aspect-ratio: 4/3;
+    object-fit: cover;
+    border-bottom: 3px solid var(--gold-pale);
+    display: block;
+  }
+  .memory-photo-placeholder {
+    width: 100%;
+    aspect-ratio: 4/3;
+    background: linear-gradient(135deg, var(--cream-dark), var(--cream));
+    display: flex; align-items: center; justify-content: center;
+    font-size: 3rem;
+    color: var(--gold-pale);
+    border-bottom: 3px solid var(--gold-pale);
+  }
+  .memory-body { padding: 16px; }
+  .memory-date { font-size: 0.75rem; color: var(--text-light); font-style: italic; margin-bottom: 6px; }
+  .memory-caption { font-size: 0.9rem; color: var(--text-dark); line-height: 1.5; }
+
+  /* ── LOVE NOTES ── */
+  .notes-feed { display: flex; flex-direction: column; gap: 14px; }
+  .note-card {
+    background: var(--ivory);
+    border: 1px solid var(--cream-dark);
+    border-radius: 4px;
+    padding: 18px 22px;
+    box-shadow: 0 2px 10px var(--shadow);
+    animation: fadeSlideIn 0.35s ease;
+    position: relative;
+  }
+  .note-card::before { content: ''; position: absolute; top: 0; left: 0; bottom: 0; width: 3px; background: linear-gradient(to bottom, var(--rose), var(--burgundy)); border-radius: 4px 0 0 4px; }
+  .note-surprise { cursor: pointer; }
+  .note-blur { filter: blur(12px); user-select: none; transition: filter 0.4s; }
+  .note-blur:hover { filter: blur(8px); }
+  .note-blur.revealed { filter: none; }
+  .note-author { font-size: 0.78rem; color: var(--text-light); font-style: italic; margin-bottom: 6px; }
+  .note-text { font-size: 0.95rem; line-height: 1.6; color: var(--text-dark); }
+  .note-tag { font-size: 0.7rem; color: var(--rose); font-style: italic; margin-top: 6px; }
+
+  /* ── DATES ── */
+  .dates-list { display: flex; flex-direction: column; gap: 12px; }
+  .date-item {
+    background: var(--ivory);
+    border: 1px solid var(--cream-dark);
+    border-radius: 4px;
+    padding: 16px 20px;
+    display: flex; align-items: center; gap: 16px;
+    box-shadow: 0 2px 10px var(--shadow);
+    animation: fadeSlideIn 0.35s ease;
+  }
+  .date-badge {
+    background: linear-gradient(135deg, var(--burgundy), var(--burgundy-light));
+    color: var(--gold-pale);
+    border-radius: 4px;
+    padding: 8px 14px;
+    text-align: center;
+    min-width: 70px;
+    flex-shrink: 0;
+  }
+  .date-badge .days { font-family: 'Cormorant Garamond', serif; font-size: 1.6rem; font-weight: 600; line-height: 1; }
+  .date-badge .days-label { font-size: 0.65rem; letter-spacing: 0.06em; opacity: 0.8; }
+  .date-info { flex: 1; }
+  .date-info .name { font-family: 'Cormorant Garamond', serif; font-size: 1.2rem; color: var(--burgundy); }
+  .date-info .actual { font-size: 0.78rem; color: var(--text-light); font-style: italic; }
+  .date-past { opacity: 0.6; }
+  .date-past .date-badge { background: var(--forest); }
+
+  /* ── JOURNAL ── */
+  .journal-entries { display: flex; flex-direction: column; gap: 18px; }
+  .journal-card {
+    background: var(--ivory);
+    border: 1px solid var(--cream-dark);
+    border-radius: 4px;
+    padding: 22px 26px;
+    box-shadow: 0 2px 12px var(--shadow);
+    animation: fadeSlideIn 0.35s ease;
+  }
+  .journal-meta { display: flex; gap: 12px; align-items: center; margin-bottom: 12px; }
+  .journal-meta .author { font-family: 'Cormorant Garamond', serif; font-size: 1.1rem; color: var(--burgundy); font-style: italic; }
+  .journal-meta .jdate { font-size: 0.78rem; color: var(--text-light); }
+  .journal-text { font-size: 0.93rem; line-height: 1.7; color: var(--text-dark); white-space: pre-wrap; }
+  .journal-prompt { background: rgba(184,134,11,0.08); border: 1px solid rgba(184,134,11,0.2); border-radius: 3px; padding: 10px 14px; font-style: italic; font-size: 0.85rem; color: var(--gold); margin-bottom: 14px; }
+
+  /* ── BUCKET LIST ── */
+  .bucket-section { margin-bottom: 28px; }
+  .bucket-section h3 { font-family: 'Cormorant Garamond', serif; font-size: 1.3rem; color: var(--burgundy); margin-bottom: 14px; display: flex; align-items: center; gap: 10px; }
+  .bucket-items { display: flex; flex-direction: column; gap: 8px; }
+  .bucket-item {
+    background: var(--ivory);
+    border: 1px solid var(--cream-dark);
+    border-radius: 4px;
+    padding: 14px 18px;
+    display: flex; align-items: center; gap: 12px;
+    box-shadow: 0 1px 8px var(--shadow);
+    transition: all 0.2s;
+    animation: fadeSlideIn 0.35s ease;
+  }
+  .bucket-item:hover { border-color: var(--gold-light); }
+  .bucket-check {
+    width: 24px; height: 24px; border: 2px solid var(--gold); border-radius: 50%;
+    flex-shrink: 0; cursor: pointer; display: flex; align-items: center; justify-content: center;
+    transition: all 0.2s; font-size: 0.9rem;
+  }
+  .bucket-check:hover { background: rgba(184,134,11,0.12); }
+  .bucket-item.done .bucket-check { background: var(--gold); }
+  .bucket-item-text { flex: 1; font-size: 0.92rem; color: var(--text-dark); }
+  .bucket-item.done .bucket-item-text { text-decoration: line-through; color: var(--text-light); }
+  .bucket-plan-tag { font-size: 0.7rem; background: rgba(61,92,58,0.12); color: var(--forest); padding: 2px 8px; border-radius: 10px; border: 1px solid rgba(61,92,58,0.2); }
+
+  /* ── MEMORY MODAL ── */
+  .memory-modal-overlay {
+    position: fixed; inset: 0;
+    background: rgba(44,26,26,0.88);
+    z-index: 150;
+    display: flex; align-items: center; justify-content: center;
+    padding: 20px;
+    animation: fadeIn 0.2s ease;
+  }
+  @keyframes fadeIn { from {opacity:0} to {opacity:1} }
+  .memory-modal {
+    background: var(--ivory);
+    border: 2px solid var(--gold);
+    border-radius: 6px;
+    max-width: 640px;
+    width: 100%;
+    max-height: 90vh;
+    overflow-y: auto;
+    box-shadow: 0 20px 60px rgba(44,26,26,0.5);
+    animation: fadeSlideIn 0.3s ease;
+    position: relative;
+  }
+  .memory-modal-photo { width: 100%; max-height: 340px; object-fit: cover; border-bottom: 3px solid var(--gold-pale); }
+  .memory-modal-photo-placeholder { width: 100%; height: 200px; background: linear-gradient(135deg, var(--cream-dark), var(--cream)); display: flex; align-items: center; justify-content: center; font-size: 4rem; color: var(--gold-pale); border-bottom: 3px solid var(--gold-pale); }
+  .memory-modal-body { padding: 26px 28px; }
+  .memory-modal-body h2 { font-family: 'Cormorant Garamond', serif; font-size: 1.7rem; color: var(--burgundy); margin-bottom: 6px; }
+  .memory-modal-body .modal-date { font-size: 0.8rem; color: var(--text-light); font-style: italic; margin-bottom: 12px; }
+  .memory-modal-body p { font-size: 0.95rem; line-height: 1.7; color: var(--text-dark); white-space: pre-wrap; }
+  .memory-modal-close { position: absolute; top: 12px; right: 14px; background: rgba(44,26,26,0.5); border: none; color: var(--gold-pale); font-size: 1.3rem; width: 32px; height: 32px; border-radius: 50%; cursor: pointer; display: flex; align-items: center; justify-content: center; }
+
+  /* ── CONFETTI / HEARTS ── */
+  .particle {
+    position: fixed;
+    pointer-events: none;
+    z-index: 999;
+    animation: fall linear forwards;
+    font-size: 1.2rem;
+  }
+  @keyframes fall {
+    0% { transform: translateY(0) rotate(0deg) scale(1); opacity: 1; }
+    100% { transform: translateY(600px) rotate(720deg) scale(0.3); opacity: 0; }
+  }
+
+  /* ── EMPTY STATES ── */
+  .empty {
+    text-align: center;
+    padding: 48px 20px;
+    color: var(--text-light);
+    font-style: italic;
+  }
+  .empty .icon { font-size: 3rem; margin-bottom: 12px; }
+  .empty p { font-size: 0.92rem; line-height: 1.6; }
+
+  /* ── SETTINGS ── */
+  .settings-section { margin-bottom: 32px; }
+  .settings-section h3 { font-family: 'Cormorant Garamond', serif; font-size: 1.3rem; color: var(--burgundy); margin-bottom: 16px; }
+
+  /* ── TOAST ── */
+  .toast {
+    position: fixed; bottom: 28px; left: 50%; transform: translateX(-50%);
+    background: var(--burgundy-dark);
+    color: var(--gold-pale);
+    padding: 12px 24px;
+    border-radius: 24px;
+    border: 1px solid var(--gold);
+    font-family: 'Lora', serif;
+    font-size: 0.88rem;
+    font-style: italic;
+    box-shadow: 0 4px 20px rgba(44,26,26,0.5);
+    z-index: 300;
+    animation: toastIn 0.3s ease, toastOut 0.3s ease 2.5s forwards;
+  }
+  @keyframes toastIn { from { opacity:0; transform: translateX(-50%) translateY(12px); } to { opacity:1; transform: translateX(-50%) translateY(0); } }
+  @keyframes toastOut { from { opacity:1; } to { opacity:0; } }
+  @keyframes shake {
+    0%,100%{transform:translateX(0)}
+    20%{transform:translateX(-8px)}
+    40%{transform:translateX(8px)}
+    60%{transform:translateX(-5px)}
+    80%{transform:translateX(5px)}
+  }
+
+  /* ── LOGIN SCREEN ── */
+  #login-screen {
+    position: fixed; inset: 0; z-index: 500;
+    background: linear-gradient(160deg, var(--burgundy-dark) 0%, var(--burgundy) 55%, #3A0D18 100%);
+    display: flex; align-items: center; justify-content: center;
+    padding: 20px;
+    background-image:
+      url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100'%3E%3Cpath d='M50 15 Q62 5 74 15 Q86 25 74 35 Q62 45 50 35 Q38 45 26 35 Q14 25 26 15 Q38 5 50 15Z' fill='none' stroke='%23B8860B' stroke-width='0.4' opacity='0.12'/%3E%3C/svg%3E"),
+      linear-gradient(160deg, var(--burgundy-dark) 0%, var(--burgundy) 55%, #3A0D18 100%);
+  }
+  .login-box {
+    text-align: center;
+    max-width: 440px; width: 100%;
+    animation: fadeSlideIn 0.5s ease;
+  }
+  .login-crest {
+    font-size: 3.5rem; margin-bottom: 8px;
+    filter: drop-shadow(0 2px 8px rgba(184,134,11,0.4));
+  }
+  .login-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2.8rem; font-weight: 300; font-style: italic;
+    color: var(--gold-light); letter-spacing: 0.06em;
+    margin-bottom: 4px;
+  }
+  .login-subtitle {
+    font-family: 'Lora', serif; font-style: italic;
+    color: rgba(240,217,144,0.6); font-size: 0.88rem;
+    margin-bottom: 36px; letter-spacing: 0.05em;
+  }
+  .login-profiles {
+    display: grid; grid-template-columns: 1fr 1fr; gap: 16px;
+    margin-bottom: 28px;
+  }
+  .profile-btn {
+    background: rgba(255,255,255,0.07);
+    border: 1px solid rgba(184,134,11,0.35);
+    border-radius: 6px; padding: 22px 16px;
+    cursor: pointer; transition: all 0.2s;
+    color: var(--gold-pale);
+    font-family: 'Cormorant Garamond', serif;
+  }
+  .profile-btn:hover {
+    background: rgba(184,134,11,0.15);
+    border-color: var(--gold-light);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 24px rgba(184,134,11,0.2);
+  }
+  .profile-btn.selected {
+    background: rgba(184,134,11,0.22);
+    border-color: var(--gold-light);
+    box-shadow: 0 0 0 2px var(--gold-light);
+  }
+  .profile-avatar { font-size: 2.4rem; margin-bottom: 8px; }
+  .profile-name {
+    font-size: 1.4rem; font-weight: 500; font-style: italic;
+    display: block; color: var(--gold-pale);
+  }
+  .profile-hint { font-size: 0.72rem; color: rgba(240,217,144,0.5); font-family: 'Lora',serif; margin-top: 4px; }
+  .pin-row {
+    display: flex; gap: 10px; justify-content: center;
+    margin: 20px 0 8px;
+  }
+  .pin-dot {
+    width: 14px; height: 14px; border-radius: 50%;
+    border: 2px solid rgba(184,134,11,0.5);
+    background: transparent; transition: all 0.15s;
+  }
+  .pin-dot.filled { background: var(--gold-light); border-color: var(--gold-light); }
+  .pin-keypad {
+    display: grid; grid-template-columns: repeat(3,1fr);
+    gap: 8px; max-width: 240px; margin: 16px auto 0;
+  }
+  .pin-key {
+    background: rgba(255,255,255,0.08);
+    border: 1px solid rgba(184,134,11,0.2);
+    border-radius: 4px; padding: 14px;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.4rem; color: var(--gold-pale);
+    cursor: pointer; transition: all 0.15s;
+  }
+  .pin-key:hover { background: rgba(184,134,11,0.18); border-color: var(--gold-light); }
+  .pin-key:active { transform: scale(0.94); }
+  .pin-error { color: var(--rose); font-size: 0.82rem; font-style: italic; min-height: 20px; margin-top: 8px; }
+  .login-step { animation: fadeSlideIn 0.3s ease; }
+  #login-step-profile { }
+  #login-step-pin { display: none; }
+  .login-back {
+    background: none; border: none; color: rgba(240,217,144,0.5);
+    font-family: 'Lora',serif; font-size: 0.8rem; cursor: pointer;
+    margin-top: 12px; font-style: italic; text-decoration: underline;
+  }
+  .login-back:hover { color: var(--gold-pale); }
+
+  /* ── NAV USER CHIP ── */
+  .nav-user-chip {
+    display: flex; align-items: center; gap: 7px;
+    background: rgba(255,255,255,0.1);
+    border: 1px solid rgba(184,134,11,0.3);
+    border-radius: 20px; padding: 5px 12px 5px 8px;
+    color: var(--gold-pale); font-family: 'Lora',serif;
+    font-size: 0.78rem; cursor: pointer; transition: all 0.2s;
+  }
+  .nav-user-chip:hover { background: rgba(255,255,255,0.18); }
+  .nav-user-avatar { font-size: 1rem; }
+</style>
+</head>
+<body>
+
+<!-- ══════════════════════════ LOGIN ══════════════════════════ -->
+<div id="login-screen">
+  <div class="login-box">
+    <div class="login-crest">❦</div>
+    <div class="login-title">Our Story</div>
+    <div class="login-subtitle">whose chapter is this?</div>
+    <div id="login-step-profile" class="login-step">
+      <div class="login-profiles" id="login-profiles-grid"></div>
+      <p style="color:rgba(240,217,144,0.4);font-size:0.78rem;font-style:italic;">Choose your name to continue</p>
+    </div>
+    <div id="login-step-pin" class="login-step" style="display:none">
+      <div style="color:var(--gold-pale);font-family:'Cormorant Garamond',serif;font-size:1.3rem;font-style:italic;margin-bottom:6px;" id="pin-greeting"></div>
+      <div style="color:rgba(240,217,144,0.55);font-size:0.8rem;font-family:'Lora',serif;margin-bottom:16px;">Enter your PIN</div>
+      <div class="pin-row" id="pin-dots"></div>
+      <div class="pin-keypad">
+        <button class="pin-key" onclick="pinPress('1')">1</button>
+        <button class="pin-key" onclick="pinPress('2')">2</button>
+        <button class="pin-key" onclick="pinPress('3')">3</button>
+        <button class="pin-key" onclick="pinPress('4')">4</button>
+        <button class="pin-key" onclick="pinPress('5')">5</button>
+        <button class="pin-key" onclick="pinPress('6')">6</button>
+        <button class="pin-key" onclick="pinPress('7')">7</button>
+        <button class="pin-key" onclick="pinPress('8')">8</button>
+        <button class="pin-key" onclick="pinPress('9')">9</button>
+        <button class="pin-key" onclick="pinPress('back')" style="font-size:1rem;">⌫</button>
+        <button class="pin-key" onclick="pinPress('0')">0</button>
+        <button class="pin-key" onclick="pinPress('ok')" style="background:rgba(184,134,11,0.25);border-color:var(--gold);">✦</button>
+      </div>
+      <div class="pin-error" id="pin-error"></div>
+      <button class="login-back" onclick="backToProfiles()">← Back</button>
+    </div>
+  </div>
+</div>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-inner">
+    <div class="nav-brand" onclick="goTo('home')"><span>❦</span> Our Story</div>
+    <div class="nav-tabs">
+      <button class="nav-tab active" onclick="goTo('home')">Home</button>
+      <button class="nav-tab" onclick="goTo('timeline')">Memories</button>
+      <button class="nav-tab" onclick="goTo('notes')">Love Notes</button>
+      <button class="nav-tab" onclick="goTo('dates')">Dates</button>
+      <button class="nav-tab" onclick="goTo('journal')">Journal</button>
+      <button class="nav-tab" onclick="goTo('bucket')">Bucket List</button>
+      <button class="nav-tab" onclick="goTo('settings')">Settings</button>
+    </div>
+    <div class="nav-actions">
+      <div class="nav-user-chip" onclick="switchUser()" id="nav-user-chip">
+        <span class="nav-user-avatar" id="nav-user-avatar">❦</span>
+        <span id="nav-user-name">—</span>
+        <span style="opacity:0.5;font-size:0.7rem">switch</span>
+      </div>
+      <button class="btn-icon" onclick="exportData()">⬇ Export</button>
+      <label class="btn-icon" style="cursor:pointer">⬆ Import<input type="file" accept=".json" onchange="importData(event)" style="display:none"></label>
+    </div>
+  </div>
+</nav>
+
+<main>
+
+<!-- ══════════════════════════════════ HOME ══════════════════════════════════ -->
+<section id="page-home" class="page active">
+  <div class="dash-hero">
+    <div class="dash-couple" id="dash-couple-name">Just the Two of Us</div>
+    <div class="dash-days" id="dash-days">0</div>
+    <div class="dash-days-label">days woven together</div>
+    <div class="dash-since" id="dash-since"></div>
+  </div>
+
+  <div class="dash-grid">
+    <div class="dash-card">
+      <div class="card-corner tl">✦</div>
+      <h3>Latest memory</h3>
+      <div class="value" id="dash-latest-mem" style="font-size:1rem;line-height:1.4;">—</div>
+      <div class="sub" id="dash-latest-date"></div>
+    </div>
+    <div class="dash-card">
+      <div class="card-corner tl">✦</div>
+      <h3>Next occasion</h3>
+      <div class="value" id="dash-next-occ">—</div>
+      <div class="sub" id="dash-next-occ-date"></div>
+    </div>
+    <div class="dash-card">
+      <div class="card-corner tl">✦</div>
+      <h3>Bucket list left</h3>
+      <div class="value" id="dash-bucket">—</div>
+      <div class="sub">adventures still to come</div>
+    </div>
+  </div>
+
+  <div class="quote-block" id="quote-block">
+    <em id="quote-text">Loading a little something for you…</em>
+    <div class="attr" id="quote-attr"></div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════ TIMELINE ══════════════════════════════════ -->
+<section id="page-timeline" class="page">
+  <div class="page-header">
+    <h1>Our Scrapbook</h1>
+    <span class="ornament">— ✦ —</span>
+    <div class="subtitle">Every moment pressed between these pages, forever yours.</div>
+  </div>
+
+  <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;margin-bottom:16px;">
+    <div class="filter-bar" style="margin:0" id="timeline-filters">
+      <button class="filter-btn active" data-tag="all" onclick="filterTimeline(this)">All</button>
+      <button class="filter-btn" data-tag="Trip" onclick="filterTimeline(this)">✈ Trip</button>
+      <button class="filter-btn" data-tag="Date Night" onclick="filterTimeline(this)">🕯 Date Night</button>
+      <button class="filter-btn" data-tag="Milestone" onclick="filterTimeline(this)">🏅 Milestone</button>
+      <button class="filter-btn" data-tag="Just Because" onclick="filterTimeline(this)">🌸 Just Because</button>
+    </div>
+    <button class="btn btn-primary" onclick="openMemoryForm()">✦ Pin a memory</button>
+  </div>
+
+  <div class="memory-grid" id="memory-grid"></div>
+</section>
+
+<!-- ══════════════════════════════════ NOTES ══════════════════════════════════ -->
+<section id="page-notes" class="page">
+  <div class="page-header">
+    <h1>Love Notes</h1>
+    <span class="ornament">— ❦ —</span>
+    <div class="subtitle">Little letters slipped under the door of the heart.</div>
+  </div>
+
+  <div class="card" style="margin-bottom:24px;">
+    <div class="card-corner tl">✦</div><div class="card-corner tr">✦</div>
+    <div class="grid-2" style="gap:12px;align-items:end;">
+      <div style="grid-column:1/-1;">
+        <div class="form-group">
+          <label>From</label>
+          <input type="text" id="note-from" placeholder="Your name…">
+        </div>
+        <div class="form-group">
+          <label>Your note</label>
+          <textarea id="note-text" placeholder="Say something lovely…"></textarea>
+        </div>
+        <div style="display:flex;align-items:center;gap:16px;flex-wrap:wrap;">
+          <label style="display:flex;align-items:center;gap:8px;cursor:pointer;font-family:'Lora',serif;font-size:0.85rem;color:var(--text-mid);">
+            <input type="checkbox" id="note-surprise" style="accent-color:var(--burgundy);">
+            <span>Make it a surprise ✉</span>
+          </label>
+          <button class="btn btn-primary" onclick="addNote()">✦ Leave note</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="notes-feed" id="notes-feed"></div>
+</section>
+
+<!-- ══════════════════════════════════ DATES ══════════════════════════════════ -->
+<section id="page-dates" class="page">
+  <div class="page-header">
+    <h1>Dates to Cherish</h1>
+    <span class="ornament">— ✦ —</span>
+    <div class="subtitle">Mark the calendar and count down to the next excuse to celebrate.</div>
+  </div>
+
+  <div class="card" style="margin-bottom:24px;">
+    <div class="card-corner tl">✦</div><div class="card-corner tr">✦</div>
+    <div class="grid-2">
+      <div class="form-group">
+        <label>Occasion name</label>
+        <input type="text" id="date-name" placeholder="e.g. Our Anniversary">
+      </div>
+      <div class="form-group">
+        <label>Date</label>
+        <input type="date" id="date-val">
+      </div>
+    </div>
+    <button class="btn btn-primary" onclick="addDate()">✦ Add to our calendar</button>
+  </div>
+
+  <div class="dates-list" id="dates-list"></div>
+</section>
+
+<!-- ══════════════════════════════════ JOURNAL ══════════════════════════════════ -->
+<section id="page-journal" class="page">
+  <div class="page-header">
+    <h1>Our Shared Journal</h1>
+    <span class="ornament">— ❧ —</span>
+    <div class="subtitle">Write it down. You'll want to remember this.</div>
+  </div>
+
+  <div class="card" style="margin-bottom:24px;">
+    <div class="card-corner tl">✦</div><div class="card-corner tr">✦</div>
+    <div id="daily-prompt" class="journal-prompt" style="display:none;"></div>
+    <div class="grid-2">
+      <div class="form-group">
+        <label>Written by</label>
+        <input type="text" id="journal-author" placeholder="Your name…">
+      </div>
+      <div class="form-group" style="display:flex;align-items:flex-end;padding-bottom:1px;">
+        <button class="btn btn-ghost" onclick="newPrompt()" style="font-size:0.8rem;padding:10px 14px;width:100%;">✦ Inspire me</button>
+      </div>
+    </div>
+    <div class="form-group">
+      <label>Entry</label>
+      <textarea id="journal-text" placeholder="What's on your mind, your heart, your list…" style="min-height:130px;"></textarea>
+    </div>
+    <button class="btn btn-primary" onclick="addJournal()">✦ Press to page</button>
+  </div>
+
+  <div class="journal-entries" id="journal-entries"></div>
+</section>
+
+<!-- ══════════════════════════════════ BUCKET ══════════════════════════════════ -->
+<section id="page-bucket" class="page">
+  <div class="page-header">
+    <h1>Our Bucket List</h1>
+    <span class="ornament">— ✦ —</span>
+    <div class="subtitle">Someday soon, or planned — adventures are what you make together.</div>
+  </div>
+
+  <div class="card" style="margin-bottom:24px;">
+    <div class="card-corner tl">✦</div><div class="card-corner tr">✦</div>
+    <div class="grid-2">
+      <div class="form-group" style="grid-column:1/-1">
+        <label>The dream</label>
+        <input type="text" id="bucket-item-input" placeholder="e.g. Slow train through Rajasthan…">
+      </div>
+      <div class="form-group">
+        <label>Status</label>
+        <select id="bucket-status">
+          <option value="someday">Someday…</option>
+          <option value="planned">Actually planned</option>
+        </select>
+      </div>
+      <div style="display:flex;align-items:flex-end;padding-bottom:1px;">
+        <button class="btn btn-primary" style="width:100%" onclick="addBucketItem()">✦ Add to the list</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="bucket-section">
+    <h3>📋 Actually Planned</h3>
+    <div class="bucket-items" id="bucket-planned"></div>
+  </div>
+  <div class="divider"><span>✦</span></div>
+  <div class="bucket-section">
+    <h3>✨ Someday…</h3>
+    <div class="bucket-items" id="bucket-someday"></div>
+  </div>
+  <div class="divider"><span>✦</span></div>
+  <div class="bucket-section">
+    <h3>💛 Memories Made</h3>
+    <div class="bucket-items" id="bucket-done"></div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════ SETTINGS ══════════════════════════════════ -->
+<section id="page-settings" class="page">
+  <div class="page-header">
+    <h1>Settings</h1>
+    <span class="ornament">— ✦ —</span>
+  </div>
+
+  <div class="card" style="max-width:560px;margin:0 auto;">
+    <div class="card-corner tl">✦</div><div class="card-corner tr">✦</div>
+    <div class="settings-section">
+      <h3>Your Story</h3>
+      <div class="form-group">
+        <label>Your name</label>
+        <input type="text" id="set-name1" placeholder="e.g. Gaurav">
+      </div>
+      <div class="form-group">
+        <label>Their name</label>
+        <input type="text" id="set-name2" placeholder="e.g. Shruti">
+      </div>
+      <div class="form-group">
+        <label>Together since</label>
+        <input type="date" id="set-since">
+      </div>
+      <button class="btn btn-primary" onclick="saveSettings()">✦ Save</button>
+    </div>
+    <div class="divider"><span>✦</span></div>
+    <div class="settings-section">
+      <h3>Data</h3>
+      <p style="font-size:0.85rem;color:var(--text-light);font-style:italic;margin-bottom:14px;line-height:1.6;">Everything lives in your browser. Export regularly to keep a backup — and to move between devices.</p>
+      <div style="display:flex;gap:10px;flex-wrap:wrap;">
+        <button class="btn btn-secondary" onclick="exportData()">⬇ Export backup</button>
+        <label class="btn btn-ghost" style="cursor:pointer">⬆ Import backup<input type="file" accept=".json" onchange="importData(event)" style="display:none"></label>
+        <button class="btn btn-danger" onclick="clearAll()">✕ Clear everything</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<!-- SETUP MODAL -->
+<div class="modal-overlay" id="setup-modal" style="display:none">
+  <div class="modal">
+    <h2>❦ Begin your story</h2>
+    <span class="ornament" style="margin:6px 0">✦ ✦ ✦</span>
+    <p style="text-align:center;font-style:italic;font-size:0.88rem;color:var(--text-light);margin-bottom:20px">Just a few things to get started</p>
+    <div class="form-group"><label>Your name</label><input type="text" id="setup-name1" placeholder="e.g. Gaurav"></div>
+    <div class="form-group"><label>Their name</label><input type="text" id="setup-name2" placeholder="e.g. Shruti"></div>
+    <div class="form-group"><label>Together since</label><input type="date" id="setup-since"></div>
+    <button class="btn btn-primary" style="width:100%" onclick="saveSetup()">✦ Begin</button>
+  </div>
+</div>
+
+<!-- MEMORY FORM MODAL -->
+<div class="modal-overlay" id="memory-form-modal" style="display:none">
+  <div class="modal" style="max-width:520px">
+    <button class="close-btn" onclick="closeMemoryForm()">✕</button>
+    <h2>✦ Pin a memory</h2>
+    <span class="ornament" style="margin:4px 0">— —</span>
+    <div class="form-group"><label>Caption</label><input type="text" id="mem-caption" placeholder="One line to remember it by…"></div>
+    <div class="form-group"><label>Date</label><input type="date" id="mem-date"></div>
+    <div class="form-group">
+      <label>Tag</label>
+      <select id="mem-tag">
+        <option value="Just Because">🌸 Just Because</option>
+        <option value="Trip">✈ Trip</option>
+        <option value="Date Night">🕯 Date Night</option>
+        <option value="Milestone">🏅 Milestone</option>
+      </select>
+    </div>
+    <div class="form-group">
+      <label>Photo (optional)</label>
+      <input type="file" accept="image/*" id="mem-photo" style="font-size:0.85rem">
+    </div>
+    <div class="form-group"><label>Story (optional)</label><textarea id="mem-story" placeholder="Tell the story behind this one…"></textarea></div>
+    <div style="display:flex;gap:10px;justify-content:flex-end;">
+      <button class="btn btn-ghost" onclick="closeMemoryForm()">Cancel</button>
+      <button class="btn btn-primary" onclick="saveMemory()">✦ Pin it</button>
+    </div>
+  </div>
+</div>
+
+<!-- MEMORY VIEW MODAL -->
+<div class="memory-modal-overlay" id="memory-view-modal" style="display:none" onclick="closeMemoryView(event)">
+  <div class="memory-modal" id="memory-view-inner">
+    <button class="memory-modal-close" onclick="document.getElementById('memory-view-modal').style.display='none'">✕</button>
+    <div id="mem-view-photo-wrap"></div>
+    <div class="memory-modal-body">
+      <div style="display:flex;gap:10px;align-items:center;flex-wrap:wrap;margin-bottom:6px;">
+        <span id="mem-view-tag"></span>
+        <span class="modal-date" id="mem-view-date"></span>
+      </div>
+      <h2 id="mem-view-caption"></h2>
+      <p id="mem-view-story" style="margin-top:12px"></p>
+      <div style="margin-top:16px;display:flex;justify-content:flex-end;">
+        <button class="btn btn-danger" id="mem-view-delete" style="font-size:0.78rem;padding:7px 14px">✕ Remove</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+// ════════════════════════════════════════════════════════════════════════════
+// ╔══════════════════════════════════════════════════════════════════════════╗
+// ║  SUPABASE CONFIG — paste your values here after creating the project   ║
+// ╚══════════════════════════════════════════════════════════════════════════╝
+// ════════════════════════════════════════════════════════════════════════════
+const SUPABASE_URL = 'https://dvkhazirkrmabrbimmyh.supabase.co';
+const SUPABASE_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImR2a2hhemlya3JtYWJyYmltbXloIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODI2NTQ0MjYsImV4cCI6MjA5ODIzMDQyNn0.hVWy9_iaPsWDKHms5PJ4Lr5YxQaDZMfGGKOV4M1e958';
+
+// ─── SUPABASE CLIENT ─────────────────────────────────────────────────────────
+// Thin wrapper — no SDK needed, just fetch
+async function sb(table, method = 'GET', body = null, query = '') {
+  const url = `${SUPABASE_URL}/rest/v1/${table}${query}`;
+  const headers = {
+    'apikey': SUPABASE_KEY,
+    'Authorization': 'Bearer ' + SUPABASE_KEY,
+    'Content-Type': 'application/json',
+  };
+  if (method === 'POST') headers['Prefer'] = 'return=representation';
+  if (method === 'PATCH') headers['Prefer'] = 'return=representation';
+  try {
+    const res = await fetch(url, { method, headers, body: body ? JSON.stringify(body) : null });
+    if (!res.ok) {
+      const err = await res.text();
+      throw new Error(`Supabase ${method} ${table}: ${err}`);
+    }
+    const text = await res.text();
+    return text ? JSON.parse(text) : [];
+  } catch(e) {
+    console.error(e);
+    toast('Connection hiccup — check your Supabase config ✦');
+    return null;
+  }
+}
+
+// Convenience helpers
+const sbGet    = (table, query='')       => sb(table, 'GET',    null,  query);
+const sbPost   = (table, body)           => sb(table, 'POST',   body,  '');
+const sbPatch  = (table, body, query='') => sb(table, 'PATCH',  body,  query);
+const sbDelete = (table, query)          => sb(table, 'DELETE', null,  query);
+
+// ─── STATE ───────────────────────────────────────────────────────────────────
+let DATA = {
+  settings: { name1: '', name2: '', since: '' },
+  memories: [],
+  notes: [],
+  dates: [],
+  journal: [],
+  bucket: []
+};
+
+const PROMPTS = [
+  "What's your favourite thing we did together this week?",
+  "Describe the other person in exactly three words.",
+  "What moment with us do you replay most in your mind?",
+  "If we could go anywhere tomorrow, where would you take us?",
+  "What song makes you think of us, and why?",
+  "What's something you've learned about yourself since we got together?",
+  "What's one thing you want us to do that we've never tried?",
+  "Name a tiny everyday thing the other person does that you secretly love.",
+  "What's the funniest memory we share?",
+  "Where do you see us in five years — be specific, be dreamy.",
+  "What does home feel like to you right now?",
+  "What are you most grateful for about this relationship?"
+];
+
+// ─── LOADING STATE ────────────────────────────────────────────────────────────
+function showLoader(msg = 'Loading…') {
+  let el = document.getElementById('global-loader');
+  if (!el) {
+    el = document.createElement('div');
+    el.id = 'global-loader';
+    el.style.cssText = 'position:fixed;inset:0;z-index:400;background:rgba(44,26,26,0.5);display:flex;align-items:center;justify-content:center;';
+    el.innerHTML = `<div style="background:var(--ivory);border:1px solid var(--gold);border-radius:6px;padding:20px 32px;font-family:\'Cormorant Garamond\',serif;font-size:1.2rem;color:var(--burgundy);font-style:italic;">${msg}</div>`;
+    document.body.appendChild(el);
+  }
+}
+function hideLoader() {
+  const el = document.getElementById('global-loader');
+  if (el) el.remove();
+}
+
+// ─── DATA LOADING FROM SUPABASE ───────────────────────────────────────────────
+async function loadAll() {
+  showLoader('Opening our story…');
+  try {
+    const [settings, memories, notes, dates, journal, bucket] = await Promise.all([
+      sbGet('settings', '?order=id.asc&limit=1'),
+      sbGet('memories', '?order=date.desc'),
+      sbGet('notes',    '?order=created_at.desc'),
+      sbGet('dates',    '?order=date.asc'),
+      sbGet('journal',  '?order=created_at.desc'),
+      sbGet('bucket',   '?order=created_at.asc'),
+    ]);
+    if (settings && settings[0]) DATA.settings = settings[0];
+    if (memories) DATA.memories = memories.map(m => ({ ...m, photo: m.photo || null }));
+    if (notes)    DATA.notes    = notes.map(n => ({ ...n, text: n.note_text }));
+    if (dates)    DATA.dates    = dates;
+    if (journal)  DATA.journal  = journal.map(j => ({ ...j, text: j.entry_text }));
+    if (bucket)   DATA.bucket   = bucket.map(b => ({ ...b, text: b.item_text }));
+  } catch(e) {
+    console.error('loadAll failed', e);
+  }
+  hideLoader();
+}
+
+// ─── ROUTING ─────────────────────────────────────────────────────────────────
+function goTo(page) {
+  document.querySelectorAll('.page').forEach(p => p.classList.remove('active'));
+  document.querySelectorAll('.nav-tab').forEach(t => t.classList.remove('active'));
+  document.getElementById('page-' + page).classList.add('active');
+  const tabs = document.querySelectorAll('.nav-tab');
+  const labels = ['home','timeline','notes','dates','journal','bucket','settings'];
+  tabs[labels.indexOf(page)]?.classList.add('active');
+  if (page === 'home')     renderHome();
+  if (page === 'timeline') renderTimeline();
+  if (page === 'notes')    { renderNotes();   autoFillFrom(); }
+  if (page === 'dates')    renderDates();
+  if (page === 'journal')  { renderJournal(); autoFillFrom(); }
+  if (page === 'bucket')   renderBucket();
+  if (page === 'settings') fillSettings();
+}
+
+// ─── HOME ─────────────────────────────────────────────────────────────────────
+function renderHome() {
+  const s = DATA.settings;
+  const n1 = s.name1 || 'You', n2 = s.name2 || 'Them';
+  document.getElementById('dash-couple-name').textContent = n1 + ' & ' + n2;
+  if (s.since) {
+    const days = Math.floor((Date.now() - new Date(s.since)) / 86400000);
+    document.getElementById('dash-days').textContent = days.toLocaleString();
+    document.getElementById('dash-since').textContent = 'since ' + fmtDate(s.since);
+  }
+  const mems = [...DATA.memories].sort((a,b) => new Date(b.date) - new Date(a.date));
+  if (mems[0]) {
+    document.getElementById('dash-latest-mem').textContent = mems[0].caption;
+    document.getElementById('dash-latest-date').textContent = fmtDate(mems[0].date);
+  }
+  const upcoming = DATA.dates
+    .filter(d => daysUntil(d.date) >= 0)
+    .sort((a,b) => daysUntil(a.date) - daysUntil(b.date));
+  if (upcoming[0]) {
+    document.getElementById('dash-next-occ').textContent = upcoming[0].name;
+    document.getElementById('dash-next-occ-date').textContent = 'in ' + daysUntil(upcoming[0].date) + ' days';
+  }
+  const rem = DATA.bucket.filter(b => !b.done).length;
+  document.getElementById('dash-bucket').textContent = rem;
+  fetchQuote();
+}
+
+async function fetchQuote() {
+  try {
+    const r = await fetch('https://zenquotes.io/api/random');
+    if (!r.ok) throw new Error();
+    const d = await r.json();
+    document.getElementById('quote-text').textContent = d[0].q;
+    document.getElementById('quote-attr').textContent = '— ' + d[0].a;
+  } catch(e) {
+    const fallbacks = [
+      ["Come live with me and be my love.", "Christopher Marlowe"],
+      ["The best thing to hold onto in life is each other.", "Audrey Hepburn"],
+      ["Whatever our souls are made of, his and mine are the same.", "Emily Brontë"],
+      ["You are my today and all of my tomorrows.", "Leo Christopher"],
+      ["I have found the one whom my soul loves.", "Song of Solomon"]
+    ];
+    const f = fallbacks[Math.floor(Math.random() * fallbacks.length)];
+    document.getElementById('quote-text').textContent = f[0];
+    document.getElementById('quote-attr').textContent = '— ' + f[1];
+  }
+}
+
+// ─── TIMELINE ─────────────────────────────────────────────────────────────────
+let activeTag = 'all';
+function filterTimeline(btn) {
+  document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  activeTag = btn.dataset.tag;
+  renderTimeline();
+}
+function renderTimeline() {
+  const grid = document.getElementById('memory-grid');
+  let mems = [...DATA.memories].sort((a,b) => new Date(b.date) - new Date(a.date));
+  if (activeTag !== 'all') mems = mems.filter(m => m.tag === activeTag);
+  if (!mems.length) {
+    grid.innerHTML = '<div class="empty" style="grid-column:1/-1"><div class="icon">📷</div><p>Nothing pinned yet.<br>Every story starts somewhere.</p></div>';
+    return;
+  }
+  grid.innerHTML = mems.map(m => `
+    <div class="memory-card" onclick="viewMemory(${m.id})">
+      ${m.photo ? `<img class="memory-photo" src="${m.photo}" alt="${escHtml(m.caption)}">` : `<div class="memory-photo-placeholder">📷</div>`}
+      <div class="memory-body">
+        <div class="memory-date">${fmtDate(m.date)}</div>
+        <div class="memory-caption">${escHtml(m.caption)}</div>
+        <div style="margin-top:8px">${tagBadge(m.tag)}</div>
+      </div>
+    </div>`).join('');
+}
+
+function openMemoryForm() {
+  document.getElementById('mem-date').value = today();
+  document.getElementById('memory-form-modal').style.display = 'flex';
+}
+function closeMemoryForm() { document.getElementById('memory-form-modal').style.display = 'none'; }
+
+async function saveMemory() {
+  const caption = document.getElementById('mem-caption').value.trim();
+  if (!caption) { toast('Give this moment a caption, at least ✦'); return; }
+  const file = document.getElementById('mem-photo').files[0];
+  let photo = null;
+  if (file) photo = await compressImage(file);
+  showLoader('Pinning memory…');
+  const row = await sbPost('memories', {
+    caption,
+    date: document.getElementById('mem-date').value || today(),
+    tag:  document.getElementById('mem-tag').value,
+    story: document.getElementById('mem-story').value.trim(),
+    photo
+  });
+  hideLoader();
+  if (row && row[0]) {
+    DATA.memories.unshift({ ...row[0] });
+    closeMemoryForm();
+    document.getElementById('mem-caption').value = '';
+    document.getElementById('mem-story').value = '';
+    document.getElementById('mem-photo').value = '';
+    renderTimeline();
+    toast('Memory pinned ✦');
+  }
+}
+
+function viewMemory(id) {
+  const m = DATA.memories.find(x => x.id === id);
+  if (!m) return;
+  const pw = document.getElementById('mem-view-photo-wrap');
+  pw.innerHTML = m.photo
+    ? `<img class="memory-modal-photo" src="${m.photo}" alt="">`
+    : `<div class="memory-modal-photo-placeholder">📷</div>`;
+  document.getElementById('mem-view-tag').outerHTML = `<span id="mem-view-tag">${tagBadge(m.tag)}</span>`;
+  document.getElementById('mem-view-date').textContent = fmtDate(m.date);
+  document.getElementById('mem-view-caption').textContent = m.caption;
+  document.getElementById('mem-view-story').textContent = m.story || '';
+  document.getElementById('mem-view-delete').onclick = () => deleteMemory(id);
+  document.getElementById('memory-view-modal').style.display = 'flex';
+}
+async function deleteMemory(id) {
+  if (!confirm('Remove this memory?')) return;
+  showLoader('Removing…');
+  await sbDelete('memories', `?id=eq.${id}`);
+  hideLoader();
+  DATA.memories = DATA.memories.filter(m => m.id !== id);
+  renderTimeline();
+  document.getElementById('memory-view-modal').style.display = 'none';
+}
+function closeMemoryView(e) {
+  if (e.target === document.getElementById('memory-view-modal'))
+    document.getElementById('memory-view-modal').style.display = 'none';
+}
+
+// ─── LOVE NOTES ──────────────────────────────────────────────────────────────
+async function addNote() {
+  const from = document.getElementById('note-from').value.trim();
+  const text = document.getElementById('note-text').value.trim();
+  if (!text) { toast('Write something first ❦'); return; }
+  showLoader('Leaving note…');
+  const row = await sbPost('notes', {
+    from_name: from,
+    note_text: text,
+    surprise: document.getElementById('note-surprise').checked,
+    revealed: false,
+    date: today()
+  });
+  hideLoader();
+  if (row && row[0]) {
+    DATA.notes.unshift({ ...row[0], text: row[0].note_text });
+    document.getElementById('note-text').value = '';
+    document.getElementById('note-surprise').checked = false;
+    renderNotes();
+    toast('Note left ❦');
+  }
+}
+function renderNotes() {
+  const feed = document.getElementById('notes-feed');
+  if (!DATA.notes.length) {
+    feed.innerHTML = '<div class="empty"><div class="icon">✉</div><p>No notes yet. Be the first to leave one.</p></div>';
+    return;
+  }
+  feed.innerHTML = DATA.notes.map(n => `
+    <div class="note-card ${n.surprise ? 'note-surprise' : ''}" ${n.surprise && !n.revealed ? `onclick="revealNote(${n.id})"` : ''}>
+      <div class="note-author">${escHtml(n.from_name || 'Anonymous')} · ${fmtDate(n.date)}</div>
+      <div class="note-text ${n.surprise && !n.revealed ? 'note-blur' : ''}">${escHtml(n.text || n.note_text)}</div>
+      ${n.surprise ? `<div class="note-tag">${n.revealed ? '💌 Revealed' : '💌 Tap to open this surprise'}</div>` : ''}
+      <div style="margin-top:10px"><button onclick="deleteNote(${n.id})" style="background:none;border:none;font-size:0.75rem;color:var(--text-light);cursor:pointer;font-family:'Lora',serif;">✕ remove</button></div>
+    </div>`).join('');
+}
+async function revealNote(id) {
+  await sbPatch('notes', { revealed: true }, `?id=eq.${id}`);
+  const n = DATA.notes.find(x => x.id === id);
+  if (n) n.revealed = true;
+  renderNotes();
+}
+async function deleteNote(id) {
+  await sbDelete('notes', `?id=eq.${id}`);
+  DATA.notes = DATA.notes.filter(n => n.id !== id);
+  renderNotes();
+}
+
+// ─── DATES ────────────────────────────────────────────────────────────────────
+async function addDate() {
+  const name = document.getElementById('date-name').value.trim();
+  const val  = document.getElementById('date-val').value;
+  if (!name || !val) { toast('Name and date, please ✦'); return; }
+  showLoader('Saving…');
+  const row = await sbPost('dates', { name, date: val });
+  hideLoader();
+  if (row && row[0]) {
+    DATA.dates.push(row[0]);
+    document.getElementById('date-name').value = '';
+    document.getElementById('date-val').value = '';
+    renderDates();
+    toast('Occasion saved ✦');
+  }
+}
+function renderDates() {
+  const list = document.getElementById('dates-list');
+  if (!DATA.dates.length) {
+    list.innerHTML = '<div class="empty"><div class="icon">📅</div><p>Add your anniversaries, birthdays, and all the little celebrations.</p></div>';
+    return;
+  }
+  const sorted = [...DATA.dates].sort((a,b) => {
+    const da = daysUntil(a.date), db = daysUntil(b.date);
+    if (da < 0 && db >= 0) return 1;
+    if (db < 0 && da >= 0) return -1;
+    if (da >= 0 && db >= 0) return da - db;
+    return db - da;
+  });
+  list.innerHTML = sorted.map(d => {
+    const du = daysUntil(d.date);
+    const past = du < 0;
+    return `<div class="date-item ${past ? 'date-past' : ''}">
+      <div class="date-badge">
+        <div class="days">${past ? '✓' : du}</div>
+        <div class="days-label">${past ? 'celebrated' : 'days'}</div>
+      </div>
+      <div class="date-info">
+        <div class="name">${escHtml(d.name)}</div>
+        <div class="actual">${fmtDate(d.date)}</div>
+        ${past ? `<div style="font-size:0.75rem;color:var(--forest);font-style:italic;margin-top:3px">✦ We celebrated this!</div>` : ''}
+      </div>
+      <button onclick="deleteDate(${d.id})" style="background:none;border:none;font-size:0.8rem;color:var(--text-light);cursor:pointer;">✕</button>
+    </div>`;
+  }).join('');
+}
+async function deleteDate(id) {
+  await sbDelete('dates', `?id=eq.${id}`);
+  DATA.dates = DATA.dates.filter(d => d.id !== id);
+  renderDates();
+}
+
+// ─── JOURNAL ──────────────────────────────────────────────────────────────────
+function newPrompt() {
+  const p = PROMPTS[Math.floor(Math.random() * PROMPTS.length)];
+  const el = document.getElementById('daily-prompt');
+  el.style.display = 'block';
+  el.textContent = "✦ Today's prompt: " + p;
+}
+async function addJournal() {
+  const author = document.getElementById('journal-author').value.trim();
+  const text   = document.getElementById('journal-text').value.trim();
+  if (!text) { toast('Write something first ✦'); return; }
+  const prompt = document.getElementById('daily-prompt').textContent || '';
+  showLoader('Pressing to page…');
+  const row = await sbPost('journal', { author, entry_text: text, prompt, date: today() });
+  hideLoader();
+  if (row && row[0]) {
+    DATA.journal.unshift({ ...row[0], text: row[0].entry_text });
+    document.getElementById('journal-text').value = '';
+    document.getElementById('daily-prompt').style.display = 'none';
+    renderJournal();
+    toast('Written into our story ✦');
+  }
+}
+function renderJournal() {
+  const el = document.getElementById('journal-entries');
+  if (!DATA.journal.length) {
+    el.innerHTML = '<div class="empty"><div class="icon">✍</div><p>Start writing. Future you will be grateful.</p></div>';
+    return;
+  }
+  el.innerHTML = DATA.journal.map(j => `
+    <div class="journal-card">
+      <div class="journal-meta">
+        <span class="author">${escHtml(j.author || 'Anonymous')}</span>
+        <span class="jdate">· ${fmtDate(j.date)}</span>
+      </div>
+      ${j.prompt ? `<div class="journal-prompt" style="font-size:0.8rem">${escHtml(j.prompt)}</div>` : ''}
+      <div class="journal-text">${escHtml(j.text || j.entry_text)}</div>
+      <div style="margin-top:12px;text-align:right">
+        <button onclick="deleteJournal(${j.id})" style="background:none;border:none;font-size:0.75rem;color:var(--text-light);cursor:pointer;font-family:'Lora',serif;">✕ remove</button>
+      </div>
+    </div>`).join('');
+}
+async function deleteJournal(id) {
+  await sbDelete('journal', `?id=eq.${id}`);
+  DATA.journal = DATA.journal.filter(j => j.id !== id);
+  renderJournal();
+}
+
+// ─── BUCKET LIST ─────────────────────────────────────────────────────────────
+async function addBucketItem() {
+  const text = document.getElementById('bucket-item-input').value.trim();
+  if (!text) { toast("What's the dream? ✦"); return; }
+  showLoader('Adding…');
+  const row = await sbPost('bucket', {
+    item_text: text,
+    status: document.getElementById('bucket-status').value,
+    done: false
+  });
+  hideLoader();
+  if (row && row[0]) {
+    DATA.bucket.push({ ...row[0], text: row[0].item_text });
+    document.getElementById('bucket-item-input').value = '';
+    renderBucket();
+    toast('Added to the list ✦');
+  }
+}
+async function checkBucket(id) {
+  const item = DATA.bucket.find(b => b.id === id);
+  if (!item || item.done) return;
+  await sbPatch('bucket', { done: true }, `?id=eq.${id}`);
+  item.done = true;
+  renderBucket();
+  celebrate();
+  toast('🎉 Memories made!');
+}
+async function deleteBucket(id) {
+  await sbDelete('bucket', `?id=eq.${id}`);
+  DATA.bucket = DATA.bucket.filter(b => b.id !== id);
+  renderBucket();
+}
+function renderBucket() {
+  const planned = DATA.bucket.filter(b => !b.done && b.status === 'planned');
+  const someday = DATA.bucket.filter(b => !b.done && b.status === 'someday');
+  const done    = DATA.bucket.filter(b =>  b.done);
+  const renderItems = items => items.length
+    ? items.map(b => `<div class="bucket-item ${b.done ? 'done' : ''}">
+        <div class="bucket-check" onclick="checkBucket(${b.id})">${b.done ? '✦' : ''}</div>
+        <div class="bucket-item-text">${escHtml(b.text || b.item_text)}</div>
+        ${b.status === 'planned' && !b.done ? `<span class="bucket-plan-tag">planned</span>` : ''}
+        <button onclick="deleteBucket(${b.id})" style="background:none;border:none;font-size:0.75rem;color:var(--text-light);cursor:pointer;">✕</button>
+      </div>`).join('')
+    : `<div style="color:var(--text-light);font-style:italic;font-size:0.85rem;padding:8px 0">Nothing here yet…</div>`;
+  document.getElementById('bucket-planned').innerHTML = renderItems(planned);
+  document.getElementById('bucket-someday').innerHTML = renderItems(someday);
+  document.getElementById('bucket-done').innerHTML    = renderItems(done);
+}
+
+// ─── SETTINGS ────────────────────────────────────────────────────────────────
+function fillSettings() {
+  const s = DATA.settings;
+  document.getElementById('set-name1').value = s.name1 || '';
+  document.getElementById('set-name2').value = s.name2 || '';
+  document.getElementById('set-since').value = s.since || '';
+}
+async function saveSettings() {
+  const name1 = document.getElementById('set-name1').value.trim();
+  const name2 = document.getElementById('set-name2').value.trim();
+  const since = document.getElementById('set-since').value;
+  showLoader('Saving…');
+  if (DATA.settings.id) {
+    await sbPatch('settings', { name1, name2, since }, `?id=eq.${DATA.settings.id}`);
+  } else {
+    const row = await sbPost('settings', { name1, name2, since });
+    if (row && row[0]) DATA.settings = row[0];
+  }
+  hideLoader();
+  DATA.settings.name1 = name1;
+  DATA.settings.name2 = name2;
+  DATA.settings.since = since;
+  renderHome();
+  toast('Saved ✦');
+}
+async function saveSetup() {
+  const name1 = document.getElementById('setup-name1').value.trim();
+  const name2 = document.getElementById('setup-name2').value.trim();
+  const since = document.getElementById('setup-since').value;
+  showLoader('Setting up your story…');
+  const row = await sbPost('settings', { name1, name2, since });
+  hideLoader();
+  if (row && row[0]) DATA.settings = row[0];
+  document.getElementById('setup-modal').style.display = 'none';
+  renderHome();
+}
+
+// ─── EXPORT / IMPORT (keep as JSON backup option) ────────────────────────────
+function exportData() {
+  const blob = new Blob([JSON.stringify(DATA, null, 2)], { type: 'application/json' });
+  const a = document.createElement('a');
+  a.href = URL.createObjectURL(blob);
+  a.download = 'our-story-backup-' + today() + '.json';
+  a.click();
+  toast('Backup downloaded ✦');
+}
+function importData(e) {
+  const file = e.target.files[0];
+  if (!file) return;
+  const reader = new FileReader();
+  reader.onload = ev => {
+    try {
+      const imported = JSON.parse(ev.target.result);
+      toast('Import from JSON not supported with Supabase — add entries manually or contact your dev ✦');
+    } catch { toast("Couldn't read that file — is it the right backup?"); }
+  };
+  reader.readAsText(file);
+}
+function clearAll() {
+  toast('To clear data, use your Supabase dashboard → Table Editor ✦');
+}
+
+// ─── CONFETTI / CELEBRATION ──────────────────────────────────────────────────
+function celebrate() {
+  const emojis = ['❤', '💛', '✨', '🌸', '💕', '✦', '❦', '🎉'];
+  for (let i = 0; i < 32; i++) {
+    const el = document.createElement('div');
+    el.className = 'particle';
+    el.textContent = emojis[Math.floor(Math.random() * emojis.length)];
+    el.style.left = Math.random() * 100 + 'vw';
+    el.style.top = Math.random() * 30 + 'vh';
+    el.style.animationDuration = (1.5 + Math.random() * 2) + 's';
+    el.style.animationDelay = (Math.random() * 0.5) + 's';
+    el.style.fontSize = (0.9 + Math.random() * 1.2) + 'rem';
+    document.body.appendChild(el);
+    setTimeout(() => el.remove(), 3500);
+  }
+}
+
+// ─── TOAST ───────────────────────────────────────────────────────────────────
+function toast(msg) {
+  document.querySelectorAll('.toast').forEach(t => t.remove());
+  const el = document.createElement('div');
+  el.className = 'toast';
+  el.textContent = msg;
+  document.body.appendChild(el);
+  setTimeout(() => el.remove(), 3200);
+}
+
+// ─── UTILS ───────────────────────────────────────────────────────────────────
+function today() { return new Date().toISOString().slice(0,10); }
+function fmtDate(s) {
+  if (!s) return '';
+  const d = new Date(s + 'T12:00:00');
+  return d.toLocaleDateString('en-GB', { day: 'numeric', month: 'long', year: 'numeric' });
+}
+function daysUntil(s) {
+  if (!s) return 0;
+  const now = new Date(); now.setHours(0,0,0,0);
+  const t = new Date(s + 'T00:00:00');
+  return Math.floor((t - now) / 86400000);
+}
+function tagBadge(tag) {
+  const map    = { 'Trip': 'trip', 'Date Night': 'date', 'Milestone': 'milestone', 'Just Because': 'just' };
+  const labels = { 'Trip': '✈ Trip', 'Date Night': '🕯 Date Night', 'Milestone': '🏅 Milestone', 'Just Because': '🌸 Just Because' };
+  return `<span class="tag tag-${map[tag] || 'just'}">${labels[tag] || tag}</span>`;
+}
+function escHtml(s) {
+  return String(s || '').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;').replace(/"/g,'&quot;');
+}
+
+// ─── IMAGE COMPRESSION ────────────────────────────────────────────────────────
+function compressImage(file) {
+  return new Promise((resolve, reject) => {
+    const reader = new FileReader();
+    reader.onload = ev => {
+      const img = new Image();
+      img.onload = () => {
+        const MAX = 900;
+        let w = img.width, h = img.height;
+        if (w > MAX) { h = Math.round(h * MAX / w); w = MAX; }
+        const canvas = document.createElement('canvas');
+        canvas.width = w; canvas.height = h;
+        canvas.getContext('2d').drawImage(img, 0, 0, w, h);
+        resolve(canvas.toDataURL('image/jpeg', 0.7));
+      };
+      img.onerror = reject;
+      img.src = ev.target.result;
+    };
+    reader.onerror = reject;
+    reader.readAsDataURL(file);
+  });
+}
+
+// ─── PROFILES / LOGIN ────────────────────────────────────────────────────────
+const DEFAULT_PROFILES = [
+  { id: 'p1', pin: '1234', avatar: '🌹' },
+  { id: 'p2', pin: '5678', avatar: '🌿' }
+];
+
+function getProfiles() {
+  const pins = JSON.parse(localStorage.getItem('ourStory_pins') || 'null') || DEFAULT_PROFILES;
+  return [
+    { ...pins[0], name: DATA.settings.name1 || 'Partner 1' },
+    { ...pins[1], name: DATA.settings.name2 || 'Partner 2' }
+  ];
+}
+
+let currentUser = null;
+let loginTarget = null;
+let pinBuffer   = '';
+
+async function initLogin() {
+  const sess = sessionStorage.getItem('ourStory_session');
+  if (sess) {
+    try {
+      currentUser = JSON.parse(sess);
+      await loadAll();
+      hideLockScreen();
+      return;
+    } catch(e) {}
+  }
+  // Load settings only (to get names for profile screen) before login
+  try {
+    const settings = await sbGet('settings', '?order=id.asc&limit=1');
+    if (settings && settings[0]) DATA.settings = settings[0];
+  } catch(e) {}
+  showLockScreen();
+}
+
+function showLockScreen() {
+  document.getElementById('login-screen').style.display = 'flex';
+  document.body.style.overflow = 'hidden';
+  renderProfileButtons();
+  showProfileStep();
+}
+
+function hideLockScreen() {
+  document.getElementById('login-screen').style.display = 'none';
+  document.body.style.overflow = '';
+  updateNavChip();
+  if (!DATA.settings || !DATA.settings.name1) {
+    document.getElementById('setup-modal').style.display = 'flex';
+    document.getElementById('setup-since').value = today();
+  }
+  renderHome();
+}
+
+function renderProfileButtons() {
+  const profiles = getProfiles();
+  document.getElementById('login-profiles-grid').innerHTML = profiles.map((p, i) => `
+    <button class="profile-btn" onclick="selectProfile(${i})">
+      <div class="profile-avatar">${p.avatar}</div>
+      <span class="profile-name">${escHtml(p.name)}</span>
+      <div class="profile-hint">tap to enter</div>
+    </button>`).join('');
+}
+
+function selectProfile(idx) {
+  const profiles = getProfiles();
+  loginTarget = profiles[idx];
+  pinBuffer = '';
+  document.getElementById('pin-greeting').textContent = 'Hello, ' + loginTarget.name + ' ❦';
+  showPinStep();
+  renderPinDots();
+}
+
+function showProfileStep() {
+  document.getElementById('login-step-profile').style.display = 'block';
+  document.getElementById('login-step-pin').style.display = 'none';
+}
+function showPinStep() {
+  document.getElementById('login-step-profile').style.display = 'none';
+  document.getElementById('login-step-pin').style.display = 'block';
+  document.getElementById('pin-error').textContent = '';
+}
+function backToProfiles() { loginTarget = null; pinBuffer = ''; showProfileStep(); }
+
+function pinPress(k) {
+  if (k === 'back') { pinBuffer = pinBuffer.slice(0,-1); renderPinDots(); return; }
+  if (k === 'ok')   { submitPin(); return; }
+  if (pinBuffer.length >= 6) return;
+  pinBuffer += k;
+  renderPinDots();
+  if (pinBuffer.length === loginTarget.pin.length) {
+    setTimeout(submitPin, 120);
+  }
+}
+
+function renderPinDots() {
+  const len = loginTarget ? loginTarget.pin.length : 4;
+  document.getElementById('pin-dots').innerHTML = Array.from({length: len}, (_,i) =>
+    `<div class="pin-dot ${i < pinBuffer.length ? 'filled' : ''}"></div>`).join('');
+}
+
+async function submitPin() {
+  if (!loginTarget) return;
+  if (pinBuffer === loginTarget.pin) {
+    currentUser = { id: loginTarget.id, name: loginTarget.name, avatar: loginTarget.avatar };
+    sessionStorage.setItem('ourStory_session', JSON.stringify(currentUser));
+    showLoader('Opening our story…');
+    await loadAll();
+    hideLoader();
+    hideLockScreen();
+    toast('Welcome back, ' + currentUser.name + ' ❦');
+  } else {
+    document.getElementById('pin-error').textContent = 'Wrong PIN — try again';
+    pinBuffer = '';
+    renderPinDots();
+    const el = document.getElementById('login-step-pin');
+    el.style.animation = 'none';
+    el.offsetHeight;
+    el.style.animation = 'shake 0.35s ease';
+  }
+}
+
+async function switchUser() {
+  currentUser = null;
+  sessionStorage.removeItem('ourStory_session');
+  pinBuffer = ''; loginTarget = null;
+  DATA = { settings: DATA.settings, memories: [], notes: [], dates: [], journal: [], bucket: [] };
+  renderProfileButtons();
+  showLockScreen();
+}
+
+function updateNavChip() {
+  if (!currentUser) return;
+  document.getElementById('nav-user-avatar').textContent = currentUser.avatar;
+  document.getElementById('nav-user-name').textContent   = currentUser.name;
+}
+
+function activeUserName() { return currentUser ? currentUser.name : ''; }
+
+function autoFillFrom() {
+  const name = activeUserName();
+  ['note-from', 'journal-author'].forEach(id => {
+    const el = document.getElementById(id);
+    if (el && name) el.value = name;
+  });
+}
+
+// ─── INIT ────────────────────────────────────────────────────────────────────
+initLogin();
+</script>
+</body>
+</html>
